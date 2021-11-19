@@ -1,0 +1,20 @@
+# permissions for end users to view whoamis.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: whoami-viewer-role
+rules:
+- apiGroups:
+  - identity.k8s.appscode.com
+  resources:
+  - whoamis
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - identity.k8s.appscode.com
+  resources:
+  - whoamis/status
+  verbs:
+  - get
